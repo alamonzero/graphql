@@ -1,0 +1,8 @@
+{
+  "disks": [
+    {
+      "name": "tahlilgaran-db",
+      "mountTo": "tahlilgaran-db"
+    }
+  ]
+}
