@@ -6,7 +6,7 @@ from .models import User
 class UserType(DjangoObjectType):
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'birthday']
+        fields = ["username", "first_name", "last_name", "birthday"]
 
 
 class UserQuery(graphene.ObjectType):
@@ -35,9 +35,9 @@ class CreateUser(graphene.Mutation):
         user = User.objects.create(
             username=username,
             password=password,
-            first_name=kwargs['firstName'] if 'firstName' in kwargs else "",
-            last_name=kwargs['lastName'] if 'lastName' in kwargs else "",
-            birthday=kwargs['birthday'] if 'birthday' in kwargs else None
+            first_name=kwargs["firstName"] if "firstName" in kwargs else "",
+            last_name=kwargs["lastName"] if "lastName" in kwargs else "",
+            birthday=kwargs["birthday"] if "birthday" in kwargs else None,
         )
         return CreateUser(id=user.id)
 
